@@ -6,12 +6,9 @@ import {
   ChevronDown,
   CircleHelp,
   ClipboardCheck,
-  FileText,
-  Folder,
   Gamepad2,
   Headphones,
   Home,
-  LayoutGrid,
   Menu,
   MessageCircle,
   Mic,
@@ -20,7 +17,6 @@ import {
   PanelLeftOpen,
   PenLine,
   Search,
-  Sparkles,
   Upload,
   UsersRound,
   X,
@@ -30,9 +26,7 @@ import logoMark from "@/assets/logo-mark.png";
 
 const primaryItems = [
   { label: "Home", to: "/home", Icon: Home },
-  { label: "My Sets", to: "/syllabus", Icon: Folder },
   { label: "Calendar", to: "/assignments", Icon: CalendarDays },
-  { label: "Mini Apps", to: "/arcade", Icon: LayoutGrid },
 ] as const;
 
 const studyItems = [
@@ -48,7 +42,6 @@ const practiceItems = [
   { label: "Flashcards", to: "/flashcards", Icon: NotebookTabs },
   { label: "Arcade", to: "/arcade", Icon: Gamepad2 },
   { label: "Essay Grader", to: "/assignments", Icon: PenLine },
-  { label: "Explainers", to: "/syllabus", Icon: FileText },
   { label: "Audio Recap", to: "/syllabus", Icon: Headphones },
 ] as const;
 
@@ -140,23 +133,7 @@ export function DashboardSidebar() {
 
         <div className="my-3 h-px bg-sidebar-border" />
 
-        <Link
-          to="/syllabus"
-          className="flex h-12 items-center gap-3 rounded-xl bg-sidebar-hover px-3 text-sidebar-foreground"
-          title={!showLabels ? "My First Study Set" : undefined}
-        >
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-accent text-sidebar-accent-foreground">
-            <NotebookTabs className="size-4.5" aria-hidden />
-          </span>
-          {showLabels && (
-            <>
-              <span className="min-w-0 flex-1 truncate text-sm">My First Study Set</span>
-              <Sparkles className="size-4 shrink-0" aria-hidden />
-            </>
-          )}
-        </Link>
-
-        <nav className="mt-3 space-y-0.5" aria-label="Study navigation">
+        <nav className="space-y-0.5" aria-label="Study navigation">
           {studyItems.map((item) => navItem(item, false, mobile))}
         </nav>
 
