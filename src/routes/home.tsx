@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, BookOpen, CalendarDays, CheckCircle2, Clock3, FileQuestion, GraduationCap, Sparkles } from "lucide-react";
 
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
+import { ProfileAvatar } from "@/components/dashboard-page";
 import { readProfile, type OnboardingProfile } from "@/lib/onboarding";
 
 export const Route = createFileRoute("/home")({
@@ -42,6 +43,7 @@ function HomePage() {
       <DashboardSidebar />
       <main className="min-w-0 flex-1 overflow-y-auto">
         <div className="mx-auto max-w-[1180px] px-5 pb-16 pt-20 md:px-8 md:pt-9 lg:px-12">
+          <div className="mb-4 flex justify-end"><ProfileAvatar /></div>
           <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
             <div className="min-w-0">
               <p className="text-sm text-muted-foreground">Tuesday, 1 September</p>
@@ -50,6 +52,7 @@ function HomePage() {
             <Link to="/syllabus" className="hidden shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-ink-foreground transition-transform hover:-translate-y-0.5 sm:flex">
               Upload material <ArrowRight className="size-4" aria-hidden />
             </Link>
+            <ProfileAvatar className="justify-self-end sm:hidden" />
           </header>
 
           <section className="mt-8 grid gap-5 bg-lilac px-6 py-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:px-8 lg:px-10">
