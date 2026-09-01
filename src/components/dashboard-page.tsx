@@ -44,38 +44,16 @@ function TopBar({ crumbs }: { crumbs: { label: string; icon?: ReactNode }[] }) {
       </nav>
 
       <div className="flex shrink-0 items-center gap-2">
-        <Link
-          to="/pricing"
-          className="hidden items-center gap-1.5 rounded-full bg-mint px-4 py-2 text-sm font-medium text-ink sm:flex"
-        >
-          <ArrowUp className="size-4" aria-hidden /> Upgrade
-        </Link>
         <button
           type="button"
           className="hidden items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm md:flex"
         >
           <Share2 className="size-4" aria-hidden /> Share
         </button>
-        <button
-          type="button"
-          className="hidden items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm lg:flex"
-        >
-          <Info className="size-4" aria-hidden /> Feedback
-        </button>
-        <span className="hidden items-center gap-1.5 rounded-full bg-highlight/60 px-3.5 py-2 text-sm font-medium text-ink sm:flex">
-          <Timer className="size-4" aria-hidden /> 25m
-        </span>
         <button type="button" className="hidden size-9 items-center justify-center rounded-full border border-border sm:flex" aria-label="Upload">
           <Upload className="size-4" aria-hidden />
         </button>
-        <img
-          src={avatar1}
-          alt="Your profile"
-          loading="lazy"
-          width={512}
-          height={512}
-          className="size-9 rounded-full object-cover"
-        />
+        <ProfileAvatar />
       </div>
     </header>
   );
