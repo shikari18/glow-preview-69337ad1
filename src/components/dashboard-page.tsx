@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronRight, Info, Share2, Timer, Upload, ArrowUp } from "lucide-react";
+import { ChevronRight, Share2, Upload } from "lucide-react";
 
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
 import catEmpty from "@/assets/cat-empty.png";
