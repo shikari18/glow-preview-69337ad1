@@ -52,7 +52,6 @@ function HomePage() {
             <Link to="/syllabus" className="hidden shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-ink-foreground transition-transform hover:-translate-y-0.5 sm:flex">
               Upload material <ArrowRight className="size-4" aria-hidden />
             </Link>
-            <ProfileAvatar className="justify-self-end sm:hidden" />
           </header>
 
           <section className="mt-8 grid gap-5 bg-lilac px-6 py-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:px-8 lg:px-10">
