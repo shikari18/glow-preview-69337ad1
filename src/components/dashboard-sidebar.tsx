@@ -5,6 +5,7 @@ import {
   CalendarDays,
   ChevronDown,
   CircleHelp,
+  FileText,
   ClipboardCheck,
   Gamepad2,
   Headphones,
@@ -26,6 +27,7 @@ import logoMark from "@/assets/logo-mark.png";
 
 const primaryItems = [
   { label: "Home", to: "/home", Icon: Home },
+  { label: "Notes", to: "/notes", Icon: FileText },
   { label: "Calendar", to: "/assignments", Icon: CalendarDays },
 ] as const;
 
@@ -67,7 +69,7 @@ export function DashboardSidebar() {
   }, [mobileOpen]);
 
   const navItem = ({ label, to, Icon }: NavItem, inset = false, mobile = false) => {
-    const active = pathname === to && (label === "Home" || label === "Syllabus" || label === "Assignments" || label === "Flashcards" || label === "Arcade");
+    const active = pathname === to && (label === "Home" || label === "Notes" || label === "Syllabus" || label === "Assignments" || label === "Flashcards" || label === "Arcade");
     const showLabels = mobile || !collapsed;
     return (
       <Link

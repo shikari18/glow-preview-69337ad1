@@ -15,6 +15,7 @@ import { Route as AssignmentsRouteImport } from './routes/assignments'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotesRouteImport } from './routes/notes'
 import { Route as PastQuestionsRouteImport } from './routes/past-questions'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as QuizzesRouteImport } from './routes/quizzes'
@@ -54,6 +55,11 @@ const HomeRoute = HomeRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PastQuestionsRoute = PastQuestionsRouteImport.update({
@@ -114,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/flashcards': typeof FlashcardsRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
   '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/quizzes': typeof QuizzesRoute
@@ -132,6 +139,7 @@ export interface FileRoutesByTo {
   '/flashcards': typeof FlashcardsRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
   '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/quizzes': typeof QuizzesRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/flashcards': typeof FlashcardsRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
   '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/quizzes': typeof QuizzesRoute
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/flashcards'
     | '/home'
     | '/login'
+    | '/notes'
     | '/past-questions'
     | '/pricing'
     | '/quizzes'
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/flashcards'
     | '/home'
     | '/login'
+    | '/notes'
     | '/past-questions'
     | '/pricing'
     | '/quizzes'
@@ -207,6 +218,7 @@ export interface FileRouteTypes {
     | '/flashcards'
     | '/home'
     | '/login'
+    | '/notes'
     | '/past-questions'
     | '/pricing'
     | '/quizzes'
@@ -226,6 +238,7 @@ export interface RootRouteChildren {
   FlashcardsRoute: typeof FlashcardsRoute
   HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
+  NotesRoute: typeof NotesRoute
   PastQuestionsRoute: typeof PastQuestionsRoute
   PricingRoute: typeof PricingRoute
   QuizzesRoute: typeof QuizzesRoute
@@ -280,6 +293,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/past-questions': {
@@ -362,6 +382,7 @@ const rootRouteChildren: RootRouteChildren = {
   FlashcardsRoute: FlashcardsRoute,
   HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
+  NotesRoute: NotesRoute,
   PastQuestionsRoute: PastQuestionsRoute,
   PricingRoute: PricingRoute,
   QuizzesRoute: QuizzesRoute,
