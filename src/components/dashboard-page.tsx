@@ -1,10 +1,22 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
 import { ChevronRight, Share2, Upload } from "lucide-react";
 
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
 import catEmpty from "@/assets/cat-empty.png";
 import avatar1 from "@/assets/avatar-1.jpg";
+
+export function ProfileAvatar({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={avatar1}
+      alt="Your profile"
+      loading="lazy"
+      width={512}
+      height={512}
+      className={`size-9 rounded-full object-cover ${className}`}
+    />
+  );
+}
 
 export function DashboardLayout({
   crumbs,
